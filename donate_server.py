@@ -13,7 +13,7 @@ def home():
             body {
                 margin: 0;
                 font-family: Arial, sans-serif;
-                background-image: url('{{ url_for("static", filename="donate.png") }}');
+                background-image: url('{{ url_for('static', filename='donate.png') }}');
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
@@ -82,7 +82,11 @@ def home():
                 So if you're able to give, we invite you to be that miracle for someone today.  
                 Help us save a life — one act of compassion at a time.
             </p>
-            <img src="/static/paypal_qr.png" alt="PayPal QR Code"><br><br>
+
+            <!-- ✅ QR Code -->
+            <img src="{{ url_for('static', filename='paypal_qr.png') }}" alt="PayPal QR Code"><br><br>
+
+            <!-- ✅ Donate Button -->
             <form action="/donate">
                 <button class="btn">Donate Now via PayPal</button>
             </form>
@@ -106,7 +110,7 @@ def thankyou():
             body {
                 margin: 0;
                 font-family: Arial, sans-serif;
-                background-image: url('/static/donate.png');
+                background-image: url('{{ url_for('static', filename='donate.png') }}');
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
