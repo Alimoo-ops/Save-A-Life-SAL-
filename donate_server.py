@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string, redirect
+from flask import Flask, render_template_string, redirect, url_for
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ def home():
             body {
                 margin: 0;
                 font-family: Arial, sans-serif;
-                background-image: url('/static/donate.png');
+                background-image: url('{{ url_for("static", filename="donate.png") }}');
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
